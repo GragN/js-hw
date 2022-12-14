@@ -17,6 +17,14 @@ class Game {
   }
 
   registerEvents() {
+    document.addEventListener('keydown', e => {
+      const currentSymbol = this.currentSymbol.textContent;
+        if (currentSymbol === e.key) {
+          this.success();
+        } else {
+          this.fail();
+        }
+      });
     /*
       TODO:
       Написать обработчик события, который откликается
@@ -87,4 +95,3 @@ class Game {
 }
 
 new Game(document.getElementById('game'))
-
